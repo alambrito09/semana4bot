@@ -34,6 +34,13 @@ public class Bot extends TelegramLongPollingBot {
             DateTimeFormatter hora = DateTimeFormatter.ofPattern("EEEE d 'de' MMMM 'a las' HH:mm");
             String message_text = update.getMessage().getText();
             long chat_id = update.getMessage().getChatId();
+            if (message_text.toLowerCase().equals("/star")) {
+                sendText(chat_id, "hola " + nombre + ", ¿cómo estás? ingresa un comando");
+                sendText(chat_id, " para ver la lista de comando ingresa /lista");
+                System.out.println("Hola " + nickname + nombre + ", tu nombre es: " + nombre + " y tu apellido es: " + apellido);
+                System.out.println("Enviaste: " + message_text);
+            }
+
             if (message_text.toLowerCase().equals("hola")) {
                 sendText(chat_id, "hola " + nombre + ", ¿cómo estás? ingresa un comando");
                 sendText(chat_id, " para ver la lista de comando ingresa /lista");
