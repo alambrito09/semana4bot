@@ -34,17 +34,27 @@ public class Bot extends TelegramLongPollingBot {
             DateTimeFormatter hora = DateTimeFormatter.ofPattern("EEEE d 'de' MMMM 'a las' HH:mm");
             String message_text = update.getMessage().getText();
             long chat_id = update.getMessage().getChatId();
-
-            System.out.println("Hola " + nickname + nombre + ", tu nombre es: " + nombre + " y tu apellido es: " + apellido);
-            System.out.println("Enviaste: " + message_text);
-
-            // Responder al mensaje "hola" o "bye"
             if (message_text.toLowerCase().equals("hola")) {
+                sendText(chat_id, "hola " + nombre + ", ¿cómo estás? ingresa un comando");
+                sendText(chat_id, " para ver la lista de comando ingresa /lista");
+                System.out.println("Hola " + nickname + nombre + ", tu nombre es: " + nombre + " y tu apellido es: " + apellido);
+                System.out.println("Enviaste: " + message_text);
+            }
+            // Responder al mensaje "hola" o "bye"
+            if (message_text.toLowerCase().equals("/lista")) {
                 System.out.println("El chat_id del usuario es: " + chat_id);
-                sendText(chat_id, "Qué onda pa " + nombre + ", ¿cómo estás?");
-            } else if (message_text.toLowerCase().equals("bye")) {
+                sendText(chat_id, "lista de comandos ");
+                sendText(chat_id, "/info ");
+                sendText(chat_id, "/progra ");
+                sendText(chat_id, "/hola ");
+                sendText(chat_id, "/cambio ");
+                sendText(chat_id, "para este dar un espacio y escribir lo que vamos a enviar por me dio del comando /grupal: ejemprlo /grupal hola  ");
+                sendText(chat_id, "/musica ");
+
+
+            } else if (message_text.toLowerCase().equals("adios")) {
                 System.out.println("El chat_id del usuario es: " + chat_id);
-                sendText(chat_id, "Órale " + nombre + ", ¡nice!");
+                sendText(chat_id, "adios que te valla bien " + nombre + ", ¡nice!");
             }
             else if (message_text.toLowerCase().equals("/info")){
                 System.out.println("El chat_id del usuario es: " + chat_id);
