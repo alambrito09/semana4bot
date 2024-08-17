@@ -66,7 +66,7 @@ public class Bot extends TelegramLongPollingBot {
             else if (message_text.toLowerCase().equals("/info")){
                 System.out.println("El chat_id del usuario es: " + chat_id);
                 sendText(chat_id, "hahorita te muestro la info de Alan  , ¡ok !");
-                sendText(chat_id, "la carreta que esta cursando alan es la de ing en sistemas y le gusta jeje ❤️");
+                sendText(chat_id, "la carrera que esta cursando alan es la de ing en sistemas y le gusta jeje ❤️");
                 sendText(chat_id, "su numero de carne´ es el : 0905-23-15264");
                 sendText(chat_id, "su nombre completo es : Alan steven marroquin villaseñor");
                 sendText(chat_id,"El semestre que esta cursando es el cuarto semestre ya le hace ganas el muchacho 💕");
